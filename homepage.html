@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Über mich<img src="Bild.PNG" alt="Ich"></title>
+    <title>Über mich</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,6 +16,15 @@
             background: #35424a;
             color: white;
             padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header img {
+            width: 100px; /* Größe anpassen */
+            height: auto; /* Seitenverhältnis beibehalten */
+            margin-right: 10px; /* Abstand zwischen Bild und Text */
+            border-radius: 50%; /* Optional: rundes Bild */
         }
         .content {
             background: white;
@@ -33,11 +42,12 @@
 <body>
 
 <header>
+    <img src="Bild.PNG" alt="Ich">
     <h1>Hallo, ich bin Yannik Angeli</h1>
 </header>
 
 <div class="content">
-    <h2>Über mich:</h2><img 
+    <h2>Über mich:</h2>
     <p>Hier kannst du einen kurzen Text über mich lesen.</p>
     
     <h2>Kontakt</h2>
