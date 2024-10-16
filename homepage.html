@@ -21,10 +21,10 @@
             align-items: center;
         }
         header img {
-            width: 120px; /* Größe anpassen */
-            height: auto; /* Seitenverhältnis beibehalten */
-            border-radius: 50%; /* Optional: rundes Bild */
-            margin-top: 10px; /* Abstand zwischen Bild und Text */
+            width: 120px;
+            height: auto;
+            border-radius: 50%;
+            margin-top: 10px;
         }
         nav {
             background: #2c3e50;
@@ -58,6 +58,33 @@
             margin-top: 20px;
             color: #777;
         }
+        .timeline {
+            position: relative;
+            padding: 10px 0;
+            margin: 20px 0;
+            list-style: none;
+            text-align: left;
+        }
+        .timeline li {
+            padding: 10px 20px;
+            position: relative;
+            margin: 10px 0;
+            border-left: 2px solid #35424a;
+        }
+        .timeline li::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 10px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #35424a;
+        }
+        .current {
+            color: #e74c3c;
+            font-weight: bold;
+        }
         .gallery {
             display: flex;
             flex-wrap: wrap;
@@ -65,7 +92,7 @@
             justify-content: center;
         }
         .gallery img {
-            width: auto; /* Größe der Galerie-Bilder */
+            width: auto;
             height: 150px;
             border-radius: 5px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -135,10 +162,19 @@
         <li>Telefonnummer: [Hier eingeben]</li>
     </ul>
 </div>
+
 <div class="content" id="Lebenslauf">
     <h2>Lebenslauf:</h2>
-    <p></p>
+    <ul class="timeline">
+        <li>2005: Geboren in Bremen, Deutschland</li>
+        <li>2011: Einschulung bei der Grundschule Borgfeld</li>
+        <li>2015: Einschulung beim Ökumenischem Gymnasium zu Bremen</li>
+        <li>2024: Abitur beim Ökumenischen Gymnasium zu Bremen</li>
+        <li class="current">2024: Beginn des dualen Studiums bei Porsche</li>
+        <li>2027: Geplante Studienabschluss</li>
+    </ul>
 </div>
+
 <div class="content" id="gallery">
     <h2>Bildergalerie</h2>
     <div class="gallery">
