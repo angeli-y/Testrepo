@@ -5,10 +5,19 @@
     font-weight: normal;
     font-style: normal;
 }
-.porsche
-{
+header {
+    display: flex;
+    align-items: center; /* Vertikale Ausrichtung */
+    background: #E7E7E7; /* Hellgrau für den Header */
+    color: #000; /* Schwarz für den Text */
+    padding: 30px;
+}
+
+header img {
     width: 60px;
     height: auto;
+    border-radius: 50%;
+    margin-right: 20px; /* Abstand zwischen Bild und Text */
 }
 body {
     font-family: 'Porsche Next TT', Arial, sans-serif;
