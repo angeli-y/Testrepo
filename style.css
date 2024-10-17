@@ -6,18 +6,25 @@
     font-style: normal;
 }
 header {
-    display: flex; 
-    align-items: center; /* Vertikale Ausrichtung */
-    background: #E7E7E7; /* Hellgrau für den Header */
-    color: #000; /* Schwarz für den Text */
-    padding: 30px;
+    position: relative; /* Damit das Bild über die Überschrift fahren kann */
+    overflow: hidden; /* Überlauf verstecken */
 }
 
 header img {
-    width: 160px;
+    width: 60px;
     height: auto;
     border-radius: 50%;
-    margin-right: 20px; /* Abstand zwischen Bild und Text */
+    margin-right: 20px;
+    position: absolute; /* Absolut positionieren */
+    left: 0; /* Startposition */
+    top: 50%; /* Vertikale Zentrierung */
+    transform: translateY(-50%); /* Zentrierung korrigieren */
+    transition: transform 1s ease; /* Animation für das Fahren */
+}
+
+.hidden {
+    opacity: 0; /* Unsichtbar initial */
+    transition: opacity 1s ease 1s; /* Verzögerung für das Einblenden */
 }
 body {
     font-family: 'Porsche Next TT', Arial, sans-serif;
