@@ -1,127 +1,159 @@
+@font-face {
+    font-family: 'Porsche Next TT';
+    src: url('path/to/PorscheNextTT-Regular.woff2') format('woff2'),
+         url('path/to/PorscheNextTT-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Porsche Next TT', Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
 }
+
 header {
     text-align: center;
     background: #35424a;
     color: white;
-    padding: 20px 0;
+    padding: 30px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 header img {
-    width: 50px;
+    width: 60px; /* Etwas größer für mehr Präsenz */
     height: auto;
     border-radius: 50%;
     margin-top: 10px;
 }
+
 nav {
     background: #2c3e50;
-    padding: 10px;
+    padding: 15px; /* Mehr Padding für ein luftigeres Gefühl */
     margin: 20px 0;
     border-radius: 5px;
 }
+
 nav ul {
     list-style-type: none;
     padding: 0;
 }
+
 nav ul li {
     display: inline;
-    margin-right: 15px;
+    margin-right: 25px; /* Mehr Abstand zwischen den Links */
 }
+
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: 500; /* Etwas mehr Gewicht für die Links */
 }
+
 nav ul li a:hover {
     text-decoration: underline;
 }
+
 .content {
     background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px; /* Mehr Padding */
+    border-radius: 8px; /* Leicht abgerundete Ecken */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
+
 footer {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px; /* Mehr Abstand nach oben */
     color: #777;
 }
+
 .timeline {
     position: relative;
-    padding: 10px 0;
+    padding: 15px 0; /* Mehr Padding */
     margin: 20px 0;
     list-style: none;
     text-align: left;
 }
+
 .timeline li {
-    padding: 10px 20px;
+    padding: 15px 25px; /* Mehr Padding für Listenelemente */
     position: relative;
-    margin: 10px 0;
+    margin: 15px 0; /* Mehr Abstand zwischen den Elementen */
     border-left: 2px solid #35424a;
 }
+
 .timeline li::before {
     content: '';
     position: absolute;
-    left: -6px;
+    left: -8px; /* Etwas mehr Abstand zum Text */
     top: 10px;
     width: 12px;
     height: 12px;
     border-radius: 50%;
     background: #35424a;
 }
+
 .current {
     color: #e74c3c;
     font-weight: bold;
 }
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px; /* Mehr Abstand zwischen Bildern */
     justify-content: center;
 }
+
 .gallery img {
     width: auto;
-    height: 150px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    height: 180px; /* Leicht größer */
+    border-radius: 8px; /* Etwas mehr Abrundung */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 form {
     display: flex;
     flex-direction: column;
 }
+
 form label {
-    margin-top: 10px;
+    margin-top: 15px; /* Mehr Abstand */
 }
+
 form input, form textarea {
-    padding: 8px;
+    padding: 10px; /* Mehr Padding */
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
 form input[type="submit"] {
     background: #35424a;
     color: white;
     border: none;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 20px; /* Mehr Abstand */
 }
+
 form input[type="submit"]:hover {
     background: #2c3e50;
 }
+
 .button {
-    padding: 10px 20px;
+    padding: 10px 15px; /* Mehr Padding */
     background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 5px;
     text-decoration: none;
     display: inline-block;
+    transition: background-color 0.3s; /* Sanfter Übergang */
 }
+
 .button:hover {
     background-color: #0056b3;
 }
