@@ -4,8 +4,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Über mich</title>
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 </head>
+<style>
+@font-face {
+    font-family: 'Porsche Next TT';
+    src: url('path/to/PorscheNextTT-Regular.woff2') format('woff2'),
+         url('path/to/PorscheNextTT-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+header {
+    position: relative; /* Damit das Bild über die Überschrift fahren kann */
+    overflow: hidden; /* Überlauf verstecken */
+}
+
+header img {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 20px;
+    position: absolute; /* Absolut positionieren */
+    left: -80px; /* Startposition außerhalb des Headers */
+    top: 50%; /* Vertikale Zentrierung */
+    transform: translateY(-50%); /* Zentrierung korrigieren */
+    transition: transform 1s ease; /* Animation für das Fahren */
+}
+
+.hidden {
+    opacity: 0; /* Unsichtbar initial */
+    transition: opacity 1s ease 1s; /* Verzögerung für das Einblenden */
+}
+body {
+    font-family: 'Porsche Next TT', Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+nav {
+    background: #C71E3A; /* Porsche Rot */
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #777;
+}
+
+.timeline {
+    position: relative;
+    padding: 15px 0;
+    margin: 20px 0;
+    list-style: none;
+    text-align: left;
+}
+
+.timeline li {
+    padding: 15px 25px;
+    position: relative;
+    margin: 15px 0;
+    border-left: 2px solid #C71E3A; /* Rot für die Timeline */
+}
+
+.timeline li::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #C71E3A; /* Rot für die Punkte */
+}
+
+.current {
+    color: #C71E3A; /* Rot für aktuelle Elemente */
+    font-weight: bold;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.gallery img {
+    width: auto;
+    height: 180px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 15px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background: #C71E3A; /* Rot für den Button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+form input[type="submit"]:hover {
+    background: #A50A2C; /* Dunkleres Rot für Hover-Effekt */
+}
+
+.button {
+    padding: 10px 15px;
+    background-color: #C71E3A; /* Rot für den Button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #A50A2C; /* Dunkleres Rot für Hover-Effekt */
+}
+</style>
 <body>
 
 <header>
@@ -17,7 +179,7 @@
         const img = document.querySelector('header img');
         const heading = document.querySelector('header h1');
 
-        img.style.transform = 'translateX(100%)'; // Bild nach rechts verschieben
+        img.style.transform = 'translateX(800px)'; // Bild nach rechts verschieben
         heading.classList.remove('hidden'); // Überschrift sichtbar machen
     };
 </script>
