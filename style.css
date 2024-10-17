@@ -5,7 +5,11 @@
     font-weight: normal;
     font-style: normal;
 }
-
+.porsche
+{
+    width: 60px;
+    height: auto;
+}
 body {
     font-family: 'Porsche Next TT', Arial, sans-serif;
     background-color: #f4f4f4;
