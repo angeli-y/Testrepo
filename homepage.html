@@ -179,8 +179,13 @@ form input[type="submit"]:hover {
         const img = document.querySelector('header img');
         const heading = document.querySelector('header h1');
 
-        img.style.transform = 'translateX(800px)'; // Bild nach rechts verschieben
-        heading.classList.remove('hidden'); // Überschrift sichtbar machen
+        // Bild nach rechts verschieben
+        img.style.transform = 'translateX(80px)'; 
+
+        // Überschrift nach der Animation sichtbar machen
+        setTimeout(() => {
+            heading.classList.remove('hidden'); // Überschrift sichtbar machen
+        }, 1000); // Verzögerung entspricht der Animationsdauer
     };
 </script>
 <nav>
