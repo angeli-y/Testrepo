@@ -4,175 +4,195 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Über mich</title>
+    <style>
+        @font-face {
+            font-family: 'Porsche Next TT';
+            src: url('path/to/PorscheNextTT-Regular.woff2') format('woff2'),
+                 url('path/to/PorscheNextTT-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Porsche Next TT', Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            position: relative;
+            overflow: hidden;
+            text-align: center; /* Center the h1 */
+        }
+
+        header img {
+            width: 60px;
+            height: auto;
+            border-radius: 50%;
+            position: absolute;
+            left: -80px; /* Start position outside the header */
+            top: 50%; /* Vertical center */
+            transform: translateY(-50%);
+            transition: transform 1s ease; /* Animation for the image moving */
+        }
+
+        h1 {
+            opacity: 0; /* Initially hidden */
+            transition: opacity 1s ease 1s; /* Delay for fading in */
+        }
+
+        .hidden {
+            opacity: 0; /* Invisible class */
+        }
+
+        nav {
+            background: #C71E3A;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+            color: #A50A2C; /* Change color on hover */
+        }
+
+        .content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .content:hover {
+            transform: scale(1.02); /* Slight scale effect on hover */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 15px 0;
+            margin: 20px 0;
+            list-style: none;
+            text-align: left;
+        }
+
+        .timeline li {
+            padding: 15px 25px;
+            position: relative;
+            margin: 15px 0;
+            border-left: 2px solid #C71E3A;
+        }
+
+        .timeline li::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 10px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #C71E3A;
+        }
+
+        .current {
+            color: #C71E3A;
+            font-weight: bold;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: auto;
+            height: 180px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05); /* Scale effect on hover */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-top: 15px;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form input[type="submit"] {
+            background: #C71E3A;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        form input[type="submit"]:hover {
+            background: #A50A2C; /* Darker red for hover effect */
+        }
+
+        .button {
+            padding: 10px 15px;
+            background-color: #C71E3A;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #A50A2C; /* Darker red for hover effect */
+        }
+    </style>
 </head>
-<style>
-@font-face {
-    font-family: 'Porsche Next TT';
-    src: url('path/to/PorscheNextTT-Regular.woff2') format('woff2'),
-         url('path/to/PorscheNextTT-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-header {
-    position: center; /* Damit das Bild über die Überschrift fahren kann */
-    overflow: hidden; /* Überlauf verstecken */
-}
-
-header img {
-    width: 60px;
-    height: auto;
-    border-radius: 50%;
-    margin-right: 20px;
-    position: absolute; /* Absolut positionieren */
-    left: -80px; /* Startposition außerhalb des Headers */
-    top: 50%; /* Vertikale Zentrierung */
-    transform: translateY(-50%); /* Zentrierung korrigieren */
-    transition: transform 1s ease; /* Animation für das Fahren */
-}
-
-.hidden {
-    opacity: 0; /* Unsichtbar initial */
-    transition: opacity 1s ease 1s; /* Verzögerung für das Einblenden */
-}
-body {
-    font-family: 'Porsche Next TT', Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-}
-nav {
-    background: #C71E3A; /* Porsche Rot */
-    padding: 15px;
-    margin: 20px 0;
-    border-radius: 5px;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 25px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-.content {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-    text-align: center;
-    margin-top: 30px;
-    color: #777;
-}
-
-.timeline {
-    position: relative;
-    padding: 15px 0;
-    margin: 20px 0;
-    list-style: none;
-    text-align: left;
-}
-
-.timeline li {
-    padding: 15px 25px;
-    position: relative;
-    margin: 15px 0;
-    border-left: 2px solid #C71E3A; /* Rot für die Timeline */
-}
-
-.timeline li::before {
-    content: '';
-    position: absolute;
-    left: -8px;
-    top: 10px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #C71E3A; /* Rot für die Punkte */
-}
-
-.current {
-    color: #C71E3A; /* Rot für aktuelle Elemente */
-    font-weight: bold;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-}
-
-.gallery img {
-    width: auto;
-    height: 180px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form label {
-    margin-top: 15px;
-}
-
-form input, form textarea {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form input[type="submit"] {
-    background: #C71E3A; /* Rot für den Button */
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-form input[type="submit"]:hover {
-    background: #A50A2C; /* Dunkleres Rot für Hover-Effekt */
-}
-
-.button {
-    padding: 10px 15px;
-    background-color: #C71E3A; /* Rot für den Button */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color: #A50A2C; /* Dunkleres Rot für Hover-Effekt */
-}
-</style>
 <body>
 
 <header>
     <img src="porsche-911.png" alt="Porsche" id="porsche">
-    <h1>Hallo, ich bin Yannik Angeli</h1>
+    <h1 class="hidden">Hallo, ich bin Yannik Angeli</h1>
 </header>
 <script>
     window.onload = function() {
@@ -185,9 +205,11 @@ form input[type="submit"]:hover {
         // Überschrift nach der Animation sichtbar machen
         setTimeout(() => {
             heading.classList.remove('hidden'); // Überschrift sichtbar machen
+            heading.style.opacity = 1; // Fade in effect
         }, 1000); // Verzögerung entspricht der Animationsdauer
     };
 </script>
+
 <nav>
     <ul>
         <li><a href="#about">Über mich</a></li>
@@ -227,7 +249,7 @@ form input[type="submit"]:hover {
     <ul class="timeline">
         <li>2005: Geboren in Bremen, Deutschland</li>
         <li>2011: Einschulung bei der Grundschule Borgfeld</li>
-        <li>2015: Einschulung beim Ökumenischem Gymnasium zu Bremen</li>
+        <li>2015: Einschulung beim Ökumenischen Gymnasium zu Bremen</li>
         <li>2021: Auslandjahr an der Ovey Comeaux High School in Louisiana, USA</li>
         <li>2024: Abitur beim Ökumenischen Gymnasium zu Bremen</li>
         <li class="current">2024: Beginn des dualen Studiums bei Porsche</li>
@@ -243,7 +265,6 @@ form input[type="submit"]:hover {
         <img src="Einschulung.jpg" alt="Einschulung">
         <img src="Abitur.jpg" alt="Abitur">
         <a href="https://htmlpreview.github.io/?https://github.com/angeli-y/Testrepo/blob/main/index.html" class="button">Siehe mehr...</a>
-        <!-- Weitere Bilder -->
     </div>
 </div>
 
